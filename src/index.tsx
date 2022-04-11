@@ -5,14 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {DevSupport} from '@react-buddy/ide-toolbox';
 import {ComponentPreviews, useInitial} from './dev';
+import {createTheme, ThemeProvider} from "@mui/material";
 
 ReactDOM.render(
-    <DevSupport
-        ComponentPreviews={ComponentPreviews}
-        useInitialHook={useInitial}
-    >
-      <App/>
-    </DevSupport>,
+    <ThemeProvider theme={createTheme({})}>
+        <DevSupport
+            ComponentPreviews={ComponentPreviews}
+            useInitialHook={useInitial}
+        >
+          <App/>
+        </DevSupport>
+    </ThemeProvider>,
 
     document.getElementById('root'),
 );
